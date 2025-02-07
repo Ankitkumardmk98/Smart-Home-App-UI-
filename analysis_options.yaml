@@ -1,0 +1,9 @@
+include: package:flutter_lints/flutter.yaml
+linter:
+  rules:
+    - prefer_const_constructors
+    - prefer_final_fields
+    - always_specify_types
+    - avoid_print
+    - avoid_redundant_argument_values
+    - unnecessary_this

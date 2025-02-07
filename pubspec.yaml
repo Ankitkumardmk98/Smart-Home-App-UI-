@@ -1,0 +1,46 @@
+name: smart_home_app_ui
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+  flutter_lints: ^5.0.0
+
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/image/
+    - assets/image/icons/
+    - assets/image/people/
+    
+
+
+  fonts:
+    - family: Ubuntu
+      fonts:
+        - asset: assets/fonts/Ubuntu/Ubuntu-Bold.ttf
+        - asset: assets/fonts/Ubuntu/Ubuntu-BoldItalic.ttf
+        - asset: assets/fonts/Ubuntu/Ubuntu-Italic.ttf
+        - asset: assets/fonts/Ubuntu/Ubuntu-Light.ttf
+        - asset: assets/fonts/Ubuntu/Ubuntu-LightItalic.ttf
+        - asset: assets/fonts/Ubuntu/Ubuntu-Medium.ttf
+        - asset: assets/fonts/Ubuntu/Ubuntu-MediumItalic.ttf
+        - asset: assets/fonts/Ubuntu/Ubuntu-Regular.ttf
+
