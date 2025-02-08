@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
         ),
         fontFamily: "Ubuntu",
         useMaterial3: true,
+        iconTheme: const IconThemeData(color: white),
       ),
       home: const Home(),
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home_app_ui/constants.dart';
 import 'package:smart_home_app_ui/models/models.dart';
+import 'package:smart_home_app_ui/pages/profile.dart';
+import 'package:smart_home_app_ui/pages/room_detail.dart';
 import 'package:smart_home_app_ui/services/rooms.dart';
 import 'package:smart_home_app_ui/services/devices.dart';
 
@@ -28,13 +30,26 @@ class _HomeState extends State<Home> {
         backgroundColor: appBgcolor,
         elevation: 0.0,
         title: IconButton(
-          onPressed: () {},
-          icon: Image.asset("assets/image/avator.png"),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute<dynamic>(
+                builder: (BuildContext context) => const Profile(),
+              ),
+            );
+          },
+          icon: ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: Image.asset(
+              "assets/image/people/p1.jpg",
+              height: 40,
+            ),
+          ),
         ),
         actions: <Widget>[
           Image.asset(
             "assets/image/menu.png",
-            height: 40,
+            height: 35,
           ),
           const SizedBox(width: 10),
         ],
@@ -148,38 +163,53 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.symmetric(
               horizontal: 10,
             ),
-            child: Stack(
-              fit: StackFit.expand,
-              children: <Widget>[
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
-                    "assets/image/living_room.jpg",
-                    fit: BoxFit.cover,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute<dynamic>(
+                      builder: (BuildContext context) => const RoomDetail(
+                        roomName: "Living Room",
+                        roomCondition: "Healthy",
+                        temperature: "25°C",
+                        humidity: "45%",
+                        light: 30,
+                      ),
+                    ));
+              },
+              child: Stack(
+                fit: StackFit.expand,
+                children: <Widget>[
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(
+                      "assets/image/living_room.jpg",
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                ),
-                const ClipRRect(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(20),
+                  const ClipRRect(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                    child: ColoredBox(
+                      color: Colors.black38,
+                    ),
                   ),
-                  child: ColoredBox(
-                    color: Colors.black38,
-                  ),
-                ),
-                const Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding: EdgeInsets.only(bottom: 10),
-                    child: Text(
-                      "Living Room",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: white,
+                  const Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Padding(
+                      padding: EdgeInsets.only(bottom: 10),
+                      child: Text(
+                        "Living Room",
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: white,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           Container(
@@ -191,38 +221,53 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.symmetric(
               horizontal: 10,
             ),
-            child: Stack(
-              fit: StackFit.expand,
-              children: <Widget>[
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
-                    "assets/image/kitchen.jpg",
-                    fit: BoxFit.cover,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute<dynamic>(
+                      builder: (BuildContext context) => const RoomDetail(
+                        roomName: "Kitchen",
+                        roomCondition: "Moderate",
+                        temperature: "27°C",
+                        humidity: "23%",
+                        light: 30,
+                      ),
+                    ));
+              },
+              child: Stack(
+                fit: StackFit.expand,
+                children: <Widget>[
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(
+                      "assets/image/kitchen.jpg",
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                ),
-                const ClipRRect(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(20),
+                  const ClipRRect(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                    child: ColoredBox(
+                      color: Colors.black38,
+                    ),
                   ),
-                  child: ColoredBox(
-                    color: Colors.black38,
-                  ),
-                ),
-                const Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding: EdgeInsets.only(bottom: 10),
-                    child: Text(
-                      "Kitchen",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: white,
+                  const Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Padding(
+                      padding: EdgeInsets.only(bottom: 10),
+                      child: Text(
+                        "Kitchen",
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: white,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           Container(
@@ -234,38 +279,53 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.symmetric(
               horizontal: 10,
             ),
-            child: Stack(
-              fit: StackFit.expand,
-              children: <Widget>[
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
-                    "assets/image/guest_room.jpg",
-                    fit: BoxFit.cover,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute<dynamic>(
+                      builder: (BuildContext context) => const RoomDetail(
+                        roomName: "Guest Room",
+                        roomCondition: "Bad",
+                        temperature: "42°C",
+                        humidity: "53%",
+                        light: 16,
+                      ),
+                    ));
+              },
+              child: Stack(
+                fit: StackFit.expand,
+                children: <Widget>[
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(
+                      "assets/image/guest_room.jpg",
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                ),
-                const ClipRRect(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(20),
+                  const ClipRRect(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                    child: ColoredBox(
+                      color: Colors.black38,
+                    ),
                   ),
-                  child: ColoredBox(
-                    color: Colors.black38,
-                  ),
-                ),
-                const Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding: EdgeInsets.only(bottom: 10),
-                    child: Text(
-                      "Guest Room",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: white,
+                  const Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Padding(
+                      padding: EdgeInsets.only(bottom: 10),
+                      child: Text(
+                        "Guest Room",
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: white,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],
