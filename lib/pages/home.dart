@@ -165,17 +165,17 @@ class _HomeState extends State<Home> {
             ),
             child: GestureDetector(
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute<dynamic>(
-                      builder: (BuildContext context) => const RoomDetail(
-                        roomName: "Living Room",
-                        roomCondition: "Healthy",
-                        temperature: "25°C",
-                        humidity: "45%",
-                        light: 30,
-                      ),
-                    ));
+                Navigator.of(context).push(
+                  MaterialPageRoute<dynamic>(
+                    builder: (BuildContext context) => const RoomDetail(
+                      roomName: "Guest Room",
+                      roomCondition: "Bad",
+                      temperature: "42°C",
+                      humidity: "53%",
+                      light: 16,
+                    ),
+                  ),
+                );
               },
               child: Stack(
                 fit: StackFit.expand,
@@ -185,6 +185,7 @@ class _HomeState extends State<Home> {
                     child: Image.asset(
                       "assets/image/living_room.jpg",
                       fit: BoxFit.cover,
+                      gaplessPlayback: true,
                     ),
                   ),
                   const ClipRRect(
@@ -223,17 +224,15 @@ class _HomeState extends State<Home> {
             ),
             child: GestureDetector(
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute<dynamic>(
-                      builder: (BuildContext context) => const RoomDetail(
-                        roomName: "Kitchen",
-                        roomCondition: "Moderate",
-                        temperature: "27°C",
-                        humidity: "23%",
-                        light: 30,
-                      ),
-                    ));
+                Navigator.of(context).push(MaterialPageRoute<dynamic>(
+                  builder: (BuildContext context) => const RoomDetail(
+                    roomName: "Kitchen",
+                    roomCondition: "Moderate",
+                    temperature: "27°C",
+                    humidity: "23%",
+                    light: 30,
+                  ),
+                ));
               },
               child: Stack(
                 fit: StackFit.expand,
@@ -243,6 +242,7 @@ class _HomeState extends State<Home> {
                     child: Image.asset(
                       "assets/image/kitchen.jpg",
                       fit: BoxFit.cover,
+                      gaplessPlayback: true,
                     ),
                   ),
                   const ClipRRect(
@@ -281,17 +281,15 @@ class _HomeState extends State<Home> {
             ),
             child: GestureDetector(
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute<dynamic>(
-                      builder: (BuildContext context) => const RoomDetail(
-                        roomName: "Guest Room",
-                        roomCondition: "Bad",
-                        temperature: "42°C",
-                        humidity: "53%",
-                        light: 16,
-                      ),
-                    ));
+                Navigator.of(context).push(MaterialPageRoute<dynamic>(
+                  builder: (BuildContext context) => const RoomDetail(
+                    roomName: "Guest Room",
+                    roomCondition: "Bad",
+                    temperature: "42°C",
+                    humidity: "53%",
+                    light: 16,
+                  ),
+                ));
               },
               child: Stack(
                 fit: StackFit.expand,
@@ -301,6 +299,7 @@ class _HomeState extends State<Home> {
                     child: Image.asset(
                       "assets/image/guest_room.jpg",
                       fit: BoxFit.cover,
+                      gaplessPlayback: true,
                     ),
                   ),
                   const ClipRRect(
