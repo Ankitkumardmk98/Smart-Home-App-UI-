@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           PointerDeviceKind.touch,
         },
       ),
-      title: 'Smart Home',
+      title: 'Smart Home App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(

@@ -3,6 +3,19 @@
 A modern and intuitive **Smart Home UI** built using **Flutter**, designed for seamless control of home automation devices. This project takes inspiration from [this Behance design](https://www.behance.net/gallery/85145183/Smart-Home-App-Exploration).
 
 
+## 📸 Screenshots  
+
+<p align="center">
+  <img src="assets/Screenshots/1.png" width="24%">
+  <img src="assets/Screenshots/2.png" width="24%">
+  <img src="assets/Screenshots/3.png" width="24%">
+  <img src="assets/Screenshots/4.png" width="24%">
+</p>
+
+## 📥 Download APK  
+[⬇ Download App (APK)](https://github.com/Ankitkumardmk98/Smart-Home-App-UI-/releases/download/apk/app-release.apk)
+
+
 ## 🚀 Features
 
 - Beautiful and responsive UI
@@ -25,7 +38,7 @@ lib/
  ├── constants.dart       # Color & theme constants
  ├── models/              # Data models for rooms & devices
  ├── services/            # Service files managing rooms & devices
- ├── pages/             # Main screens including Home UI
+ ├── pages/               # Main screens including Home UI
 ```
 
 ## 📦 Installation

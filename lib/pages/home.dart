@@ -24,6 +24,8 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    Size mediaQuery = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: appBgcolor,
       appBar: AppBar(
@@ -94,6 +96,7 @@ class _HomeState extends State<Home> {
               const SizedBox(height: 30),
               GridView.builder(
                 shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 1.8,
@@ -142,9 +145,112 @@ class _HomeState extends State<Home> {
                   );
                 },
               ),
+              const SizedBox(height: 30),
+              const Text(
+                "Family Members",
+                style: TextStyle(
+                  color: white,
+                  fontSize: 22,
+                ),
+              ),
+              const SizedBox(height: 30),
+              familyMember(
+                "assets/image/people/p1.jpg",
+                "John",
+                true,
+                mediaQuery,
+              ),
+              familyMember(
+                "assets/image/people/p2.jpg",
+                "Alex",
+                false,
+                mediaQuery,
+              ),
+              familyMember(
+                "assets/image/people/p1.jpg",
+                "Jimmy",
+                true,
+                mediaQuery,
+              ),
+              familyMember(
+                "assets/image/people/p2.jpg",
+                "Rob",
+                true,
+                mediaQuery,
+              ),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget familyMember(
+      String imagePath, String name, bool isPhoneConnected, Size mediaQuery) {
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        vertical: 10,
+        horizontal: 20,
+      ),
+      margin: const EdgeInsets.symmetric(vertical: 5),
+      decoration: BoxDecoration(
+        color: lightBgColor,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: <Widget>[
+          ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: Image.asset(
+              imagePath,
+              height: 40,
+            ),
+          ),
+          const SizedBox(width: 15),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  name,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: white,
+                    fontSize: 17,
+                  ),
+                ),
+                Text(
+                  isPhoneConnected ? "Connected" : "Not Connected",
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w100,
+                    color: mediumWhite,
+                    fontSize: 15,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              const Icon(
+                Icons.battery_2_bar_outlined,
+              ),
+              SizedBox(width: mediaQuery.width * 0.02),
+              const Icon(
+                Icons.link,
+              ),
+              SizedBox(width: mediaQuery.width * 0.02),
+              Icon(
+                isPhoneConnected
+                    ? Icons.comment
+                    : Icons.comments_disabled_rounded,
+                color: isPhoneConnected ? white : lightWhite,
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -168,11 +274,11 @@ class _HomeState extends State<Home> {
                 Navigator.of(context).push(
                   MaterialPageRoute<dynamic>(
                     builder: (BuildContext context) => const RoomDetail(
-                      roomName: "Guest Room",
-                      roomCondition: "Bad",
-                      temperature: "42°C",
-                      humidity: "53%",
-                      light: 16,
+                      roomName: "Living Room",
+                      roomCondition: "Moderate",
+                      temperature: "29°C",
+                      humidity: "25%",
+                      light: 32,
                     ),
                   ),
                 );
